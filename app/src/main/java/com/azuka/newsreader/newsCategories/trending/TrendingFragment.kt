@@ -8,16 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-
 import com.azuka.newsreader.R
+
 import com.azuka.newsreader.databinding.FragmentTrendingBinding
 import com.azuka.newsreader.newsCategories.NewsArticlesAdapter
-import com.azuka.newsreader.newsCategories.NewsArticlesViewModel
 
 class TrendingFragment : Fragment() {
 
-    private val viewModel: NewsArticlesViewModel by lazy {
-        ViewModelProviders.of(this).get(NewsArticlesViewModel::class.java)
+    private val viewModel: TrendingViewModel by lazy {
+        ViewModelProviders.of(this).get(TrendingViewModel::class.java)
     }
 
     override fun onCreateView(

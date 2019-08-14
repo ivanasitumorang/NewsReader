@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="viewModel" type="com.azuka.newsreader.newsCategories.NewsArticlesViewModel"/>
+        <variable
+                name="viewModel"
+                type="com.azuka.newsreader.newsCategories.trending.TrendingViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -16,7 +18,27 @@
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/article_list"
                 tools:listitem="@layout/list_news_articles"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageView app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:layout_width="100dp"
+                   android:layout_height="100dp" app:srcCompat="@drawable/loading_animation"
+                   android:id="@+id/status_indicator" android:layout_marginTop="8dp"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                   app:newsApiStatus="@{viewModel.status}"
+                   android:onClick="@{() -> viewModel.getArticles()}"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/refresh" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/status_indicator" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:text="@string/refresh_text"
+                app:newsApiStatus="@{viewModel.status}"
+                android:onClick="@{() -> viewModel.getArticles()}" android:visibility="gone"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
