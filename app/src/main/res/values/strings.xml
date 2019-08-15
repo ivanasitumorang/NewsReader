@@ -1,9 +1,27 @@
 <resources>
     <string name="app_name">News Reader</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="author_format">By : %s</string>
     <string name="undefined">Undefined</string>
     <string name="refresh_text">Click here to reload</string>
+
+    <string name="profile">Hello! My name is Ivana Situmorang.\nI am a final year student of Information Technology.
+        I like creating mobile app. Now, I am learning MVVM architecture using Kotlin and Coroutine.
+        \nI like to learn new technology, especially in Android Development. I hope I can be an Android Expert.
+        \nHere is my contact if you want to ask something about me :\n\n
+        Email\t\t: ivana.natalia96@gmail.com\n
+        Github\t\t: ivanasitumorang\n
+        Phone\t\t: 082370924946\n
+        LinkedIn\t: ivanaazuka
+    </string>
+    <string name="profile_title">Profile</string>
+    <string name="about_title">About</string>
+    <string name="about">This app is a news reader. This app consumes API from newsapi.org that shows top-headlines in
+        Indonesia and consists of 3 different categories, there are Business, Technology, and Sports.
+        \nThis app could show you interesting news from NewsAPI. You can check it there.
+        \n\nIf you have any question, feel free to ask me in About page :)
+    </string>
+
+
 </resources>
