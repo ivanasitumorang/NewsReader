@@ -31,6 +31,7 @@ interface NewsApiService {
         @Query("apiKey") apiKey: String,
         @Query("country") country: String): Deferred<NewsArticlesResponse<Article>>
 
+    @GET("v2/top-headlines")
     fun getArticlesByCategory(
         @Query("apiKey") apiKey: String,
         @Query("country") country: String,

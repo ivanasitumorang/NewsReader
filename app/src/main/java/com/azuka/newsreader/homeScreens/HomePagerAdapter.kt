@@ -4,9 +4,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.azuka.newsreader.newsCategories.lifestyle.CategoriesFragment
-import com.azuka.newsreader.newsCategories.politics.PoliticsFragment
-import com.azuka.newsreader.newsCategories.sport.SportsFragment
+import com.azuka.newsreader.newsCategories.categories.CategoriesFragment
 import com.azuka.newsreader.newsCategories.trending.TrendingFragment
 
 // Since this is an object collection, use a FragmentStatePagerAdapter,
@@ -16,8 +14,8 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     private val TITLES = arrayOf(
         "Trending",
-        FragmentTitle.LIFESTYLES,
-        FragmentTitle.POLITICS,
+        FragmentTitle.BUSINESS,
+        FragmentTitle.TECHNOLOGY,
         FragmentTitle.SPORTS
     )
 
@@ -30,12 +28,12 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
             1 -> {
                 Log.i("PagerAdapter", "Position 1")
-                return CategoriesFragment(FragmentTitle.LIFESTYLES)
+                return CategoriesFragment(FragmentTitle.BUSINESS)
             }
 
             2 -> {
                 Log.i("PagerAdapter", "Position 2")
-                return CategoriesFragment(FragmentTitle.POLITICS)
+                return CategoriesFragment(FragmentTitle.TECHNOLOGY)
             }
 
             3 -> {
@@ -57,8 +55,8 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     object FragmentTitle {
-        const val LIFESTYLES = "Lifestyles"
-        const val POLITICS = "Politics"
+        const val BUSINESS = "Business"
+        const val TECHNOLOGY = "Technology"
         const val SPORTS = "Sports"
     }
 

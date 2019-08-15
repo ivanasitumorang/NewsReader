@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewModel" type="com.azuka.newsreader.articleDetail.DetailViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".articleDetail.DetailFragment">
+
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_background"
+                android:id="@+id/imageView"
+                android:scaleType="fitXY" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:imageUrl="@{viewModel.selectedArticle.urlToImage}"
+                app:error="@{@drawable/ic_broken_image}"
+                app:placeholder="@{@drawable/loading_animation}" android:minHeight="250dp"/>
+        <TextView
+                android:text="@{viewModel.selectedArticle.title}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" tools:text="News Title"
+                android:textSize="18sp" android:textStyle="bold"/>
+        <TextView
+                android:text="@{@string/author_format(viewModel.selectedArticle.author ?? @string/undefined)}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/author"
+                app:layout_constraintTop_toBottomOf="@+id/title" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" tools:text="Author"/>
+        <TextView
+                android:text="@{viewModel.selectedArticle.content}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/author" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginTop="8dp" tools:text="Content news"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

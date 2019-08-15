@@ -4,5 +4,11 @@
             android:id="@+id/navigation" app:startDestination="@id/homeFragment">
 
     <fragment android:id="@+id/homeFragment" android:name="com.azuka.newsreader.homeScreens.HomeFragment"
-              android:label="HomeFragment"/>
+              android:label="HomeFragment">
+        <action android:id="@+id/action_homeFragment_to_detailFragment" app:destination="@id/detailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment" android:name="com.azuka.newsreader.articleDetail.DetailFragment"
+              android:label="DetailFragment">
+        <argument android:name="selectedArticle" app:argType="com.azuka.newsreader.network.Article"/>
+    </fragment>
 </navigation>

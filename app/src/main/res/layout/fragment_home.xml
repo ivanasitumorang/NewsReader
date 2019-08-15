@@ -17,7 +17,9 @@
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" app:tabIndicatorColor="#E40032" app:tabMode="fixed"
+                app:tabGravity="fill" android:measureAllChildren="true"
+                app:tabTextAppearance="@style/TabLayoutTextAppearance"/>
 
     </androidx.viewpager.widget.ViewPager>
 </androidx.constraintlayout.widget.ConstraintLayout>

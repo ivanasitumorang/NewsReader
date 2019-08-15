@@ -3,8 +3,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="article" type="com.azuka.newsreader.network.Article"/>
+        <variable name="clickListener" type="com.azuka.newsreader.newsCategories.ArticleClickListener"/>
     </data>
     <androidx.cardview.widget.CardView
+            android:onClick="@{() -> clickListener.onClick(article)}"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardElevation="6dp"
@@ -36,7 +38,7 @@
                     android:layout_height="0dp" app:srcCompat="@drawable/ic_launcher_background"
                     android:id="@+id/image"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:scaleType="fitXY" app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerCrop" app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:imageUrl="@{article.urlToImage}"
                     app:error="@{@drawable/ic_broken_image}"
