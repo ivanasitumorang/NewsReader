@@ -4,13 +4,14 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.azuka.newsreader.newsCategories.categories.CategoriesFragment
 import com.azuka.newsreader.newsCategories.trending.TrendingFragment
 
 // Since this is an object collection, use a FragmentStatePagerAdapter,
 // and NOT a FragmentPagerAdapter.
 
-class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class HomePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     private val TITLES = arrayOf(
         "Trending",
@@ -48,7 +49,7 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         }
     }
 
-    override fun getCount(): Int = TITLES.size
+    override fun getCount(): Int = 4
 
     override fun getPageTitle(position: Int): CharSequence {
         return TITLES[position]

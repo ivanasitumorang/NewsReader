@@ -41,7 +41,7 @@ fun bindRefresh(refreshIndicator: TextView, status: NewsApiStatus?){
 }
 
 @BindingAdapter("imageUrl", "placeholder", "error")
-fun loadImage(imageView: ImageView, url: String, placeholder: Drawable, error: Drawable){
+fun loadImage(imageView: ImageView, url: String?, placeholder: Drawable, error: Drawable){
     Picasso.get()
         .load(url)
         .placeholder(placeholder)
