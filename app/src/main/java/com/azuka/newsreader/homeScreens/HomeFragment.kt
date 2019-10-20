@@ -11,6 +11,9 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
 import com.azuka.newsreader.R
 import com.google.android.material.tabs.TabLayout
+import androidx.appcompat.app.AppCompatActivity
+
+
 
 
 class HomeFragment : Fragment() {
@@ -33,6 +36,8 @@ class HomeFragment : Fragment() {
         homePagerAdapter = HomePagerAdapter(childFragmentManager)
         viewPager = view.findViewById(R.id.pager)
         viewPager.adapter = homePagerAdapter
+
+        (activity as AppCompatActivity).supportActionBar!!.title = "Home"
 
         val tabLayout: TabLayout = view.findViewById(R.id.tab_layout)
         tabLayout.setupWithViewPager(viewPager)
