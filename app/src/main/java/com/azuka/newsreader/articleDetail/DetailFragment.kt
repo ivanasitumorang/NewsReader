@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 
-import com.azuka.newsreader.R
 import com.azuka.newsreader.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -30,6 +30,8 @@ class DetailFragment : Fragment() {
         binding.viewModel = viewModel
 
         setHasOptionsMenu(true)
+
+        (activity as AppCompatActivity).supportActionBar!!.title = "Detail"
 
         return binding.root
     }
